@@ -1,0 +1,28 @@
+# Variables d'environnement pour Next.js en production
+# À copier dans /home/cbpcommunity/nodejs/cbp-frontend/.env.production
+
+# Database
+DATABASE_URL="mysql://cbpcommunity_user:VOTRE_MOT_DE_PASSE@localhost:3306/cbpcommunity_db"
+
+# NextAuth
+NEXTAUTH_URL="https://appv2.cbpcommunity.com"
+NEXTAUTH_SECRET="GENERER_UN_SECRET_AVEC_openssl_rand_base64_32"
+
+# API Configuration
+NEXT_PUBLIC_API_URL="https://apiv2.cbpcommunity.com"
+
+# Base Path (vide pour racine du domaine)
+BASEPATH=""
+
+# Node Environment
+NODE_ENV="production"
+
+# Port (utilisé par PM2)
+PORT=3000
+
+# Google OAuth (si utilisé)
+GOOGLE_CLIENT_ID=""
+GOOGLE_CLIENT_SECRET=""
+
+# Prisma
+# Le schéma Prisma est dans src/prisma/schema.prisma

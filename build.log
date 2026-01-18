@@ -1,0 +1,273 @@
+
+> cbp-community@2.0.0 build E:\DEVPROJECTS\CBPUPDATE
+> next build
+
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+   ▲ Next.js 16.0.3 (Turbopack)
+   - Environments: .env.local, .env.production
+
+   Creating an optimized production build ...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ ✓ Compiled successfully in 3.6min
+   Skipping validation of types
+   Collecting page data using 3 workers ...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+   Generating static pages using 3 workers (0/108) ...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Error fetching pricing: Error [AggregateError]: Error
+    at S.from (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:1:51386)
+    at w.<anonymous> (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:3:12102)
+    at p.<computed> (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:1:37700)
+    at bL.request (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:3:24365)
+    at async bS (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:3:31199)
+    at async u (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_4a0fd40b._.js:1:19494) {
+  code: 'ECONNREFUSED',
+  errors: [Array],
+  config: [Object],
+  request: [Writable],
+  constructor: [Function],
+  toJSON: [Function: toJSON],
+  [cause]: AggregateError: 
+      at ignore-listed frames {
+    code: 'ECONNREFUSED'
+  }
+}
+Error fetching pricing: Error [AggregateError]: Error
+    at S.from (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:1:51386)
+    at w.<anonymous> (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:3:12102)
+    at p.<computed> (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:1:37700)
+    at bL.request (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:3:24365)
+    at async bS (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:3:31199)
+    at async D (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\src_3c8ae918._.js:1:11880) {
+  code: 'ECONNREFUSED',
+  errors: [Array],
+  config: [Object],
+  request: [Writable],
+  constructor: [Function],
+  toJSON: [Function: toJSON],
+  [cause]: AggregateError: 
+      at ignore-listed frames {
+    code: 'ECONNREFUSED'
+  }
+}
+Error fetching profile: Error [AggregateError]: Error
+    at S.from (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:1:51386)
+    at w.<anonymous> (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:3:12102)
+    at p.<computed> (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:1:37700)
+    at bL.request (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:3:24365)
+    at async bR (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:3:29867)
+    at async j (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\[root-of-the-server]__2ea1751c._.js:1:4035) {
+  code: 'ECONNREFUSED',
+  errors: [Array],
+  config: [Object],
+  request: [Writable],
+  constructor: [Function],
+  toJSON: [Function: toJSON],
+  [cause]: AggregateError: 
+      at ignore-listed frames {
+    code: 'ECONNREFUSED'
+  }
+}
+   Generating static pages using 3 workers (27/108) 
+   Generating static pages using 3 workers (54/108) 
+   Generating static pages using 3 workers (81/108) 
+Error fetching users: Error [AggregateError]: Error
+    at S.from (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:1:51386)
+    at w.<anonymous> (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:3:12102)
+    at p.<computed> (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:1:37700)
+    at bL.request (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:3:24365)
+    at async bQ (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:3:29709)
+    at async j (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\[root-of-the-server]__d15b9a0b._.js:1:9418) {
+  code: 'ECONNREFUSED',
+  errors: [Array],
+  config: [Object],
+  request: [Writable],
+  constructor: [Function],
+  toJSON: [Function: toJSON],
+  [cause]: AggregateError: 
+      at ignore-listed frames {
+    code: 'ECONNREFUSED'
+  }
+}
+Error fetching users: Error [AggregateError]: Error
+    at S.from (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:1:51386)
+    at w.<anonymous> (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:3:12102)
+    at p.<computed> (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:1:37700)
+    at bL.request (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:3:24365)
+    at async bQ (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:3:29709)
+    at async i (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\[root-of-the-server]__f3481976._.js:1:6218) {
+  code: 'ECONNREFUSED',
+  errors: [Array],
+  config: [Object],
+  request: [Writable],
+  constructor: [Function],
+  toJSON: [Function: toJSON],
+  [cause]: AggregateError: 
+      at ignore-listed frames {
+    code: 'ECONNREFUSED'
+  }
+}
+Error fetching pricing: Error [AggregateError]: Error
+    at S.from (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:1:51386)
+    at w.<anonymous> (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:3:12102)
+    at p.<computed> (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:1:37700)
+    at bL.request (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:3:24365)
+    at async bS (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:3:31199)
+    at async e (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\[root-of-the-server]__b3d44827._.js:1:1425) {
+  code: 'ECONNREFUSED',
+  errors: [Array],
+  config: [Object],
+  request: [Writable],
+  constructor: [Function],
+  toJSON: [Function: toJSON],
+  [cause]: AggregateError: 
+      at ignore-listed frames {
+    code: 'ECONNREFUSED'
+  }
+}
+Error fetching pricing: Error [AggregateError]: Error
+    at S.from (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:1:51386)
+    at w.<anonymous> (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:3:12102)
+    at p.<computed> (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:1:37700)
+    at bL.request (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:3:24365)
+    at async bS (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\_81fd3af8._.js:3:31199)
+    at async e (E:\DEVPROJECTS\CBPUPDATE\.next\server\chunks\ssr\[root-of-the-server]__ea2e9e23._.js:1:1449) {
+  code: 'ECONNREFUSED',
+  errors: [Array],
+  config: [Object],
+  request: [Writable],
+  constructor: [Function],
+  toJSON: [Function: toJSON],
+  [cause]: AggregateError: 
+      at ignore-listed frames {
+    code: 'ECONNREFUSED'
+  }
+}
+ ✓ Generating static pages using 3 workers (108/108) in 13.1s
+   Finalizing page optimization ...
+
+Route (app)
+┌ ○ /_not-found
+├ ƒ /[...not-found]
+├ ƒ /administration/department
+├ ƒ /administration/mlm
+├ ƒ /administration/package
+├ ƒ /administration/role
+├ ƒ /administration/setting
+├ ƒ /administration/user
+├ ƒ /administration/wallet
+├ ƒ /apps/academy/course-details
+├ ƒ /apps/academy/dashboard
+├ ƒ /apps/academy/my-courses
+├ ƒ /apps/calendar
+├ ƒ /apps/chat
+├ ƒ /apps/ecommerce/customers/details/[id]
+├ ƒ /apps/ecommerce/customers/list
+├ ƒ /apps/ecommerce/dashboard
+├ ƒ /apps/ecommerce/manage-reviews
+├ ƒ /apps/ecommerce/orders/details/[id]
+├ ƒ /apps/ecommerce/orders/list
+├ ƒ /apps/ecommerce/products/add
+├ ƒ /apps/ecommerce/products/category
+├ ƒ /apps/ecommerce/products/list
+├ ƒ /apps/ecommerce/referrals
+├ ƒ /apps/ecommerce/settings
+├ ƒ /apps/email
+├ ƒ /apps/email/[folder]
+├ ƒ /apps/email/label/[label]
+├ ƒ /apps/invoice/add
+├ ƒ /apps/invoice/edit/[id]
+├ ƒ /apps/invoice/list
+├ ƒ /apps/invoice/preview/[id]
+├ ƒ /apps/kanban
+├ ƒ /apps/logistics/dashboard
+├ ƒ /apps/logistics/fleet
+├ ƒ /apps/permissions
+├ ƒ /apps/roles
+├ ƒ /apps/support/tickets
+├ ƒ /apps/support/tickets/[id]
+├ ƒ /apps/user/list
+├ ƒ /apps/user/view
+├ ƒ /bonus/bonus
+├ ƒ /bonus/gain
+├ ƒ /charts/apex-charts
+├ ƒ /charts/recharts
+├ ƒ /dashboards/academy
+├ ƒ /dashboards/analytics
+├ ƒ /dashboards/crm
+├ ƒ /dashboards/ecommerce
+├ ƒ /dashboards/logistics
+├ ƒ /file/file
+├ ƒ /forgot-password
+├ ƒ /forms/form-layouts
+├ ƒ /forms/form-validation
+├ ƒ /forms/form-wizard
+├ ƒ /front-pages/checkout
+├ ƒ /front-pages/help-center
+├ ƒ /front-pages/help-center/article/how-to-add-product-in-cart
+├ ƒ /front-pages/landing-page
+├ ƒ /front-pages/payment
+├ ƒ /front-pages/pricing
+├ ƒ /guest/support/[token]
+├ ƒ /guest/support/create
+├ ƒ /guest/support/track
+├ ƒ /invest/investor
+├ ƒ /investment
+├ ƒ /login
+├ ƒ /network
+├ ƒ /notification-admin/campaigns
+├ ƒ /notification-admin/templates
+├ ƒ /notification/notification
+├ ƒ /pages/account-settings
+├ ƒ /pages/auth/forgot-password-v1
+├ ƒ /pages/auth/forgot-password-v2
+├ ƒ /pages/auth/login-v1
+├ ƒ /pages/auth/login-v2
+├ ƒ /pages/auth/register-multi-steps
+├ ƒ /pages/auth/register-v1
+├ ƒ /pages/auth/register-v2
+├ ƒ /pages/auth/reset-password-v1
+├ ƒ /pages/auth/reset-password-v2
+├ ƒ /pages/auth/two-steps-v1
+├ ƒ /pages/auth/two-steps-v2
+├ ƒ /pages/auth/verify-email-v1
+├ ƒ /pages/auth/verify-email-v2
+├ ƒ /pages/dialog-examples
+├ ƒ /pages/faq
+├ ƒ /pages/misc/401-not-authorized
+├ ƒ /pages/misc/404-not-found
+├ ƒ /pages/misc/coming-soon
+├ ƒ /pages/misc/under-maintenance
+├ ƒ /pages/pricing
+├ ƒ /pages/user-profile
+├ ƒ /pages/widget-examples/actions
+├ ƒ /pages/widget-examples/advanced
+├ ƒ /pages/widget-examples/basic
+├ ƒ /pages/widget-examples/charts
+├ ƒ /pages/widget-examples/statistics
+├ ƒ /pages/wizard-examples/checkout
+├ ƒ /pages/wizard-examples/create-deal
+├ ƒ /pages/wizard-examples/property-listing
+├ ƒ /parring/parring
+├ ƒ /payment/payment
+├ ƒ /profile
+├ ƒ /react-table
+├ ƒ /register
+├ ƒ /subscription/subscription
+├ ƒ /theme-configuration
+├ ƒ /transaction
+├ ƒ /transaction/cash
+├ ƒ /transaction/coin
+├ ƒ /transaction/coinsale
+├ ƒ /transaction/recharge
+├ ƒ /transaction/transfert
+└ ƒ /wallet
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
