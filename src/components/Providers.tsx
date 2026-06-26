@@ -5,6 +5,7 @@ import type { ChildrenType, Direction } from '@core/types'
 
 // Context Imports
 import { AuthProvider } from '@/contexts/AuthContext'
+import { NextAuthProvider } from '@/contexts/nextAuthProvider'
 import { VerticalNavProvider } from '@menu/contexts/verticalNavContext'
 import { SettingsProvider } from '@core/contexts/settingsContext'
 import ThemeProvider from '@components/theme'
@@ -30,16 +31,18 @@ const Providers = (props: Props) => {
   const systemMode = 'light' // Default standard mode
 
   return (
-    <AuthProvider>
-      <VerticalNavProvider>
-        <SettingsProvider settingsCookie={{}} mode={mode}>
-          <ThemeProvider direction={direction} systemMode={systemMode}>
-            <ReduxProvider>{children}</ReduxProvider>
-            <AppReactToastify direction={direction} hideProgressBar />
-          </ThemeProvider>
-        </SettingsProvider>
-      </VerticalNavProvider>
-    </AuthProvider>
+    <NextAuthProvider>
+      <AuthProvider>
+        <VerticalNavProvider>
+          <SettingsProvider settingsCookie={{}} mode={mode}>
+            <ThemeProvider direction={direction} systemMode={systemMode}>
+              <ReduxProvider>{children}</ReduxProvider>
+              <AppReactToastify direction={direction} hideProgressBar />
+            </ThemeProvider>
+          </SettingsProvider>
+        </VerticalNavProvider>
+      </AuthProvider>
+    </NextAuthProvider>
   )
 }
 

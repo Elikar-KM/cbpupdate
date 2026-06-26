@@ -11,7 +11,6 @@ import VerticalLayout from '@layouts/VerticalLayout'
 import HorizontalLayout from '@layouts/HorizontalLayout'
 
 // Component Imports
-import Providers from '@components/Providers'
 import Navigation from '@components/layout/vertical/Navigation'
 import Header from '@components/layout/horizontal/Header'
 import Navbar from '@components/layout/vertical/Navbar'
@@ -39,37 +38,32 @@ const Layout = async (props: ChildrenType) => {
   const systemMode = await getSystemMode()
 
   return (
-    <Providers direction={direction}>
-      <AuthGuard locale={lang}>
-        <LayoutWrapper
-          systemMode={systemMode}
-          verticalLayout={
-            <VerticalLayout
-              navigation={<Navigation dictionary={dictionary} mode={mode} />}
-              navbar={<Navbar />}
-              footer={<VerticalFooter />}
-            >
-              {children}
-            </VerticalLayout>
-          }
-          horizontalLayout={
-            <HorizontalLayout header={<Header dictionary={dictionary} />} footer={<HorizontalFooter />}>
-              {children}
-            </HorizontalLayout>
-          }
-          suppressHydrationWarning={true}
-        />
-        <ScrollToTop className='mui-fixed'>
-          <Button
-            variant='contained'
-            className='is-10 bs-10 rounded-full p-0 min-is-0 flex items-center justify-center'
+    <AuthGuard locale={lang}>
+      <LayoutWrapper
+        systemMode={systemMode}
+        verticalLayout={
+          <VerticalLayout
+            navigation={<Navigation dictionary={dictionary} mode={mode} />}
+            navbar={<Navbar />}
+            footer={<VerticalFooter />}
           >
-            <i className='tabler-arrow-up' />
-          </Button>
-        </ScrollToTop>
-        <Customizer dir={direction} />
-      </AuthGuard>
-    </Providers>
+            {children}
+          </VerticalLayout>
+        }
+        horizontalLayout={
+          <HorizontalLayout header={<Header dictionary={dictionary} />} footer={<HorizontalFooter />}>
+            {children}
+          </HorizontalLayout>
+        }
+        suppressHydrationWarning={true}
+      />
+      <ScrollToTop className='mui-fixed'>
+        <Button variant='contained' className='is-10 bs-10 rounded-full p-0 min-is-0 flex items-center justify-center'>
+          <i className='tabler-arrow-up' />
+        </Button>
+      </ScrollToTop>
+      <Customizer dir={direction} />
+    </AuthGuard>
   )
 }
 

@@ -2,27 +2,29 @@
 
 // React Imports
 import { useEffect } from 'react'
+
 import { useRouter } from 'next/navigation'
 
 // Context Imports
 import { useAuth } from '@/contexts/AuthContext'
 
-// Config Imports
-import themeConfig from '@configs/themeConfig'
-
 // Type Imports
 import type { ChildrenType } from '@core/types'
-import type { Locale } from '@configs/i18n'
 
-const GuestOnlyRoute = ({ children, lang }: ChildrenType & { lang: Locale }) => {
-  const { isAuthenticated, loading } = useAuth()
+const GuestOnlyRoute = ({ children }: ChildrenType) => {
+  const { user, isAuthenticated, loading } = useAuth()
   const router = useRouter()
 
   useEffect(() => {
-    if (!loading && isAuthenticated) {
-      router.replace(themeConfig.homePageUrl)
+    if (!loading && isAuthenticated && user) {
+      const role = user.role ? String(user.role).toLowerCase() : 'investor'
+
+      const dashboard =
+        role === 'admin' || role === 'super-admin' || role === 'system-admin' ? '/dashboards/crm' : '/investment'
+
+      router.replace(dashboard)
     }
-  }, [isAuthenticated, loading, router])
+  }, [isAuthenticated, loading, router, user])
 
   if (loading || isAuthenticated) {
     return null

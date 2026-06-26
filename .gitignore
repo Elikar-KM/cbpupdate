@@ -33,7 +33,11 @@ yarn-error.log*
 # cPanel deployment files
 cpanel-deploy/
 cbp-production-*.zip
+cbp-production.zip
 .htaccess
+
+# npm lockfile (project uses pnpm)
+package-lock.json
 
 # vercel
 .vercel

@@ -54,13 +54,8 @@ type CustomizerProps = {
   disableDirection?: boolean
 }
 
-const getLocalePath = (pathName: string, locale: string) => {
-  if (!pathName) return '/'
-  const segments = pathName.split('/')
-
-  segments[1] = locale
-
-  return segments.join('/')
+const getLocalePath = (pathName: string) => {
+  return pathName
 }
 
 type DebouncedColorPickerProps = {
@@ -442,7 +437,7 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr', disableDirection = false }
                 <div className='flex flex-col gap-2'>
                   <p className='font-medium'>Direction</p>
                   <div className='flex items-center gap-4'>
-                    <Link href={getLocalePath(pathName, 'en')}>
+                    <Link href={getLocalePath(pathName)}>
                       <div className='flex flex-col items-start gap-0.5'>
                         <div
                           className={classnames(styles.itemWrapper, {
@@ -457,7 +452,7 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr', disableDirection = false }
                         </p>
                       </div>
                     </Link>
-                    <Link href={getLocalePath(pathName, 'ar')}>
+                    <Link href={getLocalePath(pathName)}>
                       <div className='flex flex-col items-start gap-0.5'>
                         <div
                           className={classnames(styles.itemWrapper, {

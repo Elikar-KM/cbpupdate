@@ -1,5 +1,4 @@
 import axios from 'axios'
-import type { AxiosResponse } from 'axios'
 
 // Types
 export interface LoginParams {
@@ -47,14 +46,24 @@ api.interceptors.request.use(config => {
 
 export const authService = {
   login: async (credentials: LoginParams): Promise<AuthResponse> => {
-    const response = await api.post<AuthResponse>('/auth/login', credentials)
+    const response = await api.post<any>('/auth/login', credentials)
+    const result = response.data
 
-    if (response.data.access_token && typeof window !== 'undefined') {
-      localStorage.setItem('accessToken', response.data.access_token)
-      localStorage.setItem('userData', JSON.stringify(response.data.user))
+    if (result.access_token && typeof window !== 'undefined') {
+      localStorage.setItem('accessToken', result.access_token)
+
+      // The API returns the user in 'data' field, but the app expects it in 'user' field
+      const userData = result.user || result.data
+
+      if (userData) {
+        localStorage.setItem('userData', JSON.stringify(userData))
+      }
     }
 
-    return response.data
+    return {
+      ...result,
+      user: result.user || result.data
+    }
   },
 
   logout: async () => {
@@ -78,7 +87,16 @@ export const authService = {
     if (typeof window === 'undefined') return null
     const userStr = localStorage.getItem('userData')
 
-    if (userStr) return JSON.parse(userStr) as User
+    if (!userStr || userStr === 'undefined') return null
+
+    try {
+      return JSON.parse(userStr) as User
+    } catch (e) {
+      console.error('Error parsing userData from localStorage', e)
+      localStorage.removeItem('userData')
+
+      return null
+    }
 
     return null
   },

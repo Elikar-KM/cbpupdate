@@ -3,7 +3,6 @@ import type { ChildrenType } from '@core/types'
 import type { Locale } from '@configs/i18n'
 
 // Component Imports
-import Providers from '@components/Providers'
 import BlankLayout from '@layouts/BlankLayout'
 
 // Config Imports
@@ -21,11 +20,7 @@ const Layout = async (props: Props) => {
   const direction = 'ltr'
   const systemMode = await getSystemMode()
 
-  return (
-    <Providers direction={direction}>
-      <BlankLayout systemMode={systemMode}>{children}</BlankLayout>
-    </Providers>
-  )
+  return <BlankLayout systemMode={systemMode}>{children}</BlankLayout>
 }
 
 export default Layout

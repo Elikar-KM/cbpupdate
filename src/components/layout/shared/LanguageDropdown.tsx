@@ -27,28 +27,15 @@ type LanguageDataType = {
   langName: string
 }
 
-const getLocalePath = (pathName: string, locale: string) => {
-  if (!pathName) return '/'
-  const segments = pathName.split('/')
-
-  segments[1] = locale
-
-  return segments.join('/')
+const getLocalePath = (pathName: string) => {
+  return pathName
 }
 
 // Vars
 const languageData: LanguageDataType[] = [
   {
-    langCode: 'en',
-    langName: 'English'
-  },
-  {
     langCode: 'fr',
-    langName: 'French'
-  },
-  {
-    langCode: 'ar',
-    langName: 'Arabic'
+    langName: 'Français'
   }
 ]
 
@@ -96,7 +83,7 @@ const LanguageDropdown = () => {
                     <MenuItem
                       key={locale.langCode}
                       component={Link}
-                      href={getLocalePath(pathName, locale.langCode)}
+                      href={getLocalePath(pathName)}
                       onClick={handleClose}
                       selected={false}
                     >

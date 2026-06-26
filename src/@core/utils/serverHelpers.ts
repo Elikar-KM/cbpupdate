@@ -12,11 +12,16 @@ import type { SystemMode } from '@core/types'
 import themeConfig from '@configs/themeConfig'
 
 export const getSettingsFromCookie = async (): Promise<Settings> => {
-  const cookieStore = await cookies()
+  try {
+    const cookieStore = await cookies()
+    const cookieName = themeConfig.settingsCookieName
+    const cookieValue = cookieStore.get(cookieName)?.value
 
-  const cookieName = themeConfig.settingsCookieName
-
-  return JSON.parse(cookieStore.get(cookieName)?.value || '{}')
+    return JSON.parse(cookieValue || '{}')
+  } catch (error) {
+    console.error('Error parsing settings cookie:', error)
+    return {} as Settings
+  }
 }
 
 export const getMode = async () => {

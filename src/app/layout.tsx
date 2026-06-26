@@ -17,6 +17,9 @@ import type { ChildrenType } from '@core/types'
 // HOC Imports
 import TranslationWrapper from '@/hocs/TranslationWrapper'
 
+// Component Imports
+import Providers from '@components/Providers'
+
 // Config Imports
 // import { i18n } from '@configs/i18n'
 
@@ -50,7 +53,7 @@ const RootLayout = async (props: ChildrenType) => {
       <html id='__next' lang={lang} dir={direction} suppressHydrationWarning={true}>
         <body className='flex is-full min-bs-full flex-auto flex-col' suppressHydrationWarning>
           <InitColorSchemeScript attribute='data' defaultMode={systemMode} />
-          {children}
+          <Providers direction={direction}>{children}</Providers>
         </body>
       </html>
     </TranslationWrapper>

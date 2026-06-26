@@ -48,13 +48,8 @@ import { useSettings } from '@core/hooks/useSettings'
 // Style Imports
 import styles from '@core/components/customizer/styles.module.css'
 
-const getLocalePath = (pathName: string, locale: string) => {
-  if (!pathName) return '/'
-  const segments = pathName.split('/')
-
-  segments[1] = locale
-
-  return segments.join('/')
+const getLocalePath = (pathName: string, _locale: string) => {
+  return pathName
 }
 
 type DebouncedColorPickerProps = {
@@ -454,7 +449,7 @@ const ThemeConfiguration = () => {
           <div className='flex flex-col gap-2'>
             <p className='font-medium'>Direction</p>
             <div className='flex items-center gap-4 flex-wrap'>
-              <Link href={getLocalePath(pathName, 'en')}>
+              <Link href={getLocalePath(pathName)}>
                 <div className='flex flex-col items-start gap-0.5'>
                   <div
                     className={classnames(styles.itemWrapper, {

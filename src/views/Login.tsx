@@ -20,7 +20,6 @@ import Divider from '@mui/material/Divider'
 import Alert from '@mui/material/Alert'
 
 // Third-party Imports
-import { signIn } from 'next-auth/react'
 import { Controller, useForm } from 'react-hook-form'
 import { valibotResolver } from '@hookform/resolvers/valibot'
 import { email, object, minLength, string, pipe, nonEmpty } from 'valibot'
@@ -42,6 +41,7 @@ import themeConfig from '@configs/themeConfig'
 // Hook Imports
 import { useImageVariant } from '@core/hooks/useImageVariant'
 import { useSettings } from '@core/hooks/useSettings'
+import { useAuth } from '@/contexts/AuthContext'
 
 // Util Imports
 import { getLocalizedUrl } from '@/utils/i18n'
@@ -110,6 +110,7 @@ const Login = ({ mode }: { mode: SystemMode }) => {
   // const { lang: locale } = useParams()
   const locale = 'fr'
   const { settings } = useSettings()
+  const { login } = useAuth()
   const theme = useTheme()
   const hidden = useMediaQuery(theme.breakpoints.down('md'))
   const authBackground = useImageVariant(mode, lightImg, darkImg)
@@ -152,29 +153,18 @@ const Login = ({ mode }: { mode: SystemMode }) => {
   const handleClickShowPassword = () => setIsPasswordShown(show => !show)
 
   const onSubmit: SubmitHandler<FormData> = async (data: FormData) => {
-    const res = await signIn('credentials', {
-      email: data.email,
-      password: data.password,
-      redirect: false
-    })
+    try {
+      await login({
+        email: data.email,
+        password: data.password
+      })
 
-    if (res && res.ok && res.error === null) {
       // Vars
       const redirectURL = searchParams.get('redirectTo') ?? '/'
 
-      router.replace(getLocalizedUrl(redirectURL, locale as Locale))
-    } else {
-      if (res?.error) {
-        let error: ErrorType
-
-        try {
-          error = JSON.parse(res.error)
-        } catch {
-          error = { message: [res.error] }
-        }
-
-        setErrorState(error)
-      }
+      router.replace(getLocalizedUrl(redirectURL))
+    } catch (error: any) {
+      setErrorState({ message: [error.message || 'Erreur de connexion'] })
     }
   }
 

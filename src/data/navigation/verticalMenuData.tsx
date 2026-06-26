@@ -28,11 +28,11 @@ const verticalMenuData = (
     })
   }
 
-  // Tableau de Bord (Tous les utilisateurs)
+  // Tableau de Bord (Dynamique selon le rôle)
   menu.push({
     label: 'Tableau de Bord',
     icon: 'tabler-smart-home',
-    href: '/dashboards/crm'
+    href: isAdmin ? '/dashboards/crm' : '/investment'
   })
 
   // Gérer Investisseurs (Admin uniquement)

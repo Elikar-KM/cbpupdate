@@ -1,7 +1,9 @@
 'use client'
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
+
 import { useRouter } from 'next/navigation'
+
 import { authService, type User, type LoginParams } from '@/services/authService'
 
 interface AuthContextType {
@@ -22,9 +24,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const initAuth = async () => {
       const storedUser = authService.getCurrentUser()
+
       if (storedUser) {
         setUser(storedUser)
       }
+
       setLoading(false)
     }
 
@@ -34,8 +38,19 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const login = async (credentials: LoginParams) => {
     try {
       const response = await authService.login(credentials)
-      setUser(response.user)
-      router.push('/dashboards/crm')
+
+      if (response.user) {
+        setUser(response.user)
+
+        const role = response.user.role ? String(response.user.role).toLowerCase() : 'investor'
+
+        const dashboard =
+          role === 'admin' || role === 'super-admin' || role === 'system-admin' ? '/dashboards/crm' : '/investment'
+
+        router.push(dashboard)
+      } else {
+        throw new Error('Données utilisateur manquantes après connexion')
+      }
     } catch (error) {
       console.error('Login failed', error)
       throw error
@@ -65,8 +80,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
 export const useAuth = () => {
   const context = useContext(AuthContext)
+
   if (!context) {
     throw new Error('useAuth must be used within an AuthProvider')
   }
+
   return context
 }

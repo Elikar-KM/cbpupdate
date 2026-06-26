@@ -22,9 +22,19 @@ axiosInstance.interceptors.request.use(
       return config
     }
 
-    // Otherwise, use normal session
-    const session = await getSession()
-    const token = session?.user?.accessToken
+    // Otherwise, use normal session or localStorage
+    let token = null
+
+    try {
+      const session = await getSession()
+      token = session?.user?.accessToken
+    } catch (e) {
+      console.warn('NextAuth session check failed, falling back to localStorage')
+    }
+
+    if (!token && typeof window !== 'undefined') {
+      token = localStorage.getItem('accessToken')
+    }
 
     if (token) {
       config.headers.Authorization = `Bearer ${token}`
